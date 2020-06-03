@@ -17,7 +17,7 @@ buildscript {
     dependencies {
         classpath 'com.github.ben-manes:gradle-versions-plugin:0.11.3'
         classpath 'com.jakewharton.hugo:hugo-plugin:1.2.1'
-        classpath 'io.fabric.tools:gradle:1.+'
+        classpath 'io.fabric.tools:gradle:1.25.4'
         classpath 'com.getkeepsafe.dexcount:dexcount-gradle-plugin:0.1.1'
     }
 }
@@ -76,7 +76,8 @@ android {
             }
             applicationId scriptApplicationId
             dimension "name"
-            buildConfigField "boolean", "CRASHLYTICS_ENABLED", "true"
+            ext.enableCrashlytics = false
+            buildConfigField "boolean", "CRASHLYTICS_ENABLED", "false"
         }
     }
 
